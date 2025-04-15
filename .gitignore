@@ -1,0 +1,12 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+# OS generated files
+.DS_Store
+Thumbs.db
