@@ -15,6 +15,4 @@ group :development, :test do
   gem "rake", "~> 13.0"
   # WebMock ajuda a simular requisições HTTP nos testes, para não depender da API real
   gem "webmock", "~> 3.25.1"
-  # Dotenv carrega variáveis de ambiente de um arquivo .env (útil para guardar API keys localmente)
-  gem "dotenv", "~> 3.1.8"
 end
