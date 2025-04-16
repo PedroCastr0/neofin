@@ -2,12 +2,10 @@
 
 require "test_helper"
 
-class TestNeofinRuby < Minitest::Test
+class TestNeofin < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::NeofinRuby::VERSION
-  end
+    refute_nil ::Neofin::VERSION, "VERSION should not be nil."
 
-  def test_it_does_something_useful
-    assert false
+    assert_match(/\A\d+\.\d+\.\d+\z/, ::Neofin::VERSION, "Version should follow X.Y.Z")
   end
 end

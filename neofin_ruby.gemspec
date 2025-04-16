@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/neofin_ruby/version"
+require_relative "lib/neofin/version"
 
 Gem::Specification.new do |spec|
   spec.name = "neofin_ruby"
-  spec.version = NeofinRuby::VERSION
+  spec.version = Neofin::VERSION
   spec.authors = ["Pedro de Castro e Silva (ih)"]
   spec.email = ["pedrocastros027@gmail.com"]
 
