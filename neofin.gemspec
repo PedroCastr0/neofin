@@ -3,15 +3,15 @@
 require_relative "lib/neofin/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "neofin_ruby"
+  spec.name = "neofin"
   spec.version = Neofin::VERSION
-  spec.authors = ["Pedro de Castro e Silva (ih)"]
+  spec.authors = ["Pedro de Castro e Silva"]
   spec.email = ["pedrocastros027@gmail.com"]
 
   spec.summary = "A Ruby client for the Neofin Payments API."
   spec.description = "Provides a Ruby interface for interacting with the Neofin Payments API (v2023-12), allowing creation, retrieval, update, and cancellation of invoices and customer management."
 
-  spec.homepage = "https://github.com/PedroCastr0/neofin_ruby"
+  spec.homepage = "https://github.com/PedroCastr0/neofin"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
 
