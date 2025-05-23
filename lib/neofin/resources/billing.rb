@@ -59,6 +59,36 @@ module Neofin
       def list(params = {})
         get_request(RESOURCE_PATH, params)
       end
+
+      # Lists all invoices filtered by integration_identifier.
+      # @param integration_identifier [String] The integration identifier to filter by.
+      # @param params [Hash] Optional additional query parameters.
+      # @return [Hash] API response containing a list of billings.
+      def list_by_integration_identifier(integration_identifier, params = {})
+        params = params.merge({ integration_identifier: integration_identifier })
+        list(params)
+      end
+
+      # Lists all invoices filtered by status.
+      # @param status [String] The status to filter by (e.g., 'pending', 'paid', etc.).
+      # @param params [Hash] Optional additional query parameters.
+      # @return [Hash] API response containing a list of billings.
+      def list_by_status(status, params = {})
+        params = params.merge({ status: status })
+        list(params)
+      end
+
+      # Lists billings by payment date range.
+      # @param start_paid_at_date [String] ISO 8601 date string. Required. Returns payments from this date onwards.
+      # @param end_paid_at_date [String, nil] ISO 8601 date string. Optional. Returns payments up to this date.
+      # @param params [Hash] Optional additional query parameters.
+      # @return [Hash] API response containing a list of billings/installments.
+      def list_by_payment_date(start_paid_at_date:, end_paid_at_date: nil, params: {})
+        raise ArgumentError, "start_paid_at_date is required" if start_paid_at_date.nil? || start_paid_at_date.empty?
+        query = params.merge({ start_paid_at_date: start_paid_at_date })
+        query[:end_paid_at_date] = end_paid_at_date if end_paid_at_date
+        get_request("/billing/installment/by_payment_date", query)
+      end
     end
   end
 end

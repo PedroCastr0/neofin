@@ -23,6 +23,13 @@ module Neofin
         path = "#{RESOURCE_PATH}#{document_number}"
         get_request(path)
       end
+
+      # Lists all customers associated with the account, with optional filters.
+      # @param params [Hash] Optional query parameters for filtering (e.g., status, integration_identifier)
+      # @return [Hash] API response containing a list of customers.
+      def list(params = {})
+        get_request(RESOURCE_PATH, params)
+      end
     end
   end
 end

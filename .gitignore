@@ -6,7 +6,9 @@
 /pkg/
 /spec/reports/
 /tmp/
+.cursor/
 
 # OS generated files
 .DS_Store
 Thumbs.db
+test.rb
